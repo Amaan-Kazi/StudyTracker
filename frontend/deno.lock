@@ -15,6 +15,7 @@
     "npm:oxlint@^1.79.0": "1.80.0",
     "npm:react-dom@^19.2.8": "19.2.8_react@19.2.8",
     "npm:react-icons@^5.7.0": "5.7.0_react@19.2.8",
+    "npm:react-router@^8.3.1": "8.3.1_react@19.2.8_react-dom@19.2.8__react@19.2.8",
     "npm:react@^19.2.8": "19.2.8",
     "npm:typescript@~6.0.2": "6.0.3",
     "npm:vite@^8.2.2": "8.2.2_@types+node@24.13.3"
@@ -1395,6 +1396,9 @@
     "convert-source-map@2.0.0": {
       "integrity": "sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg=="
     },
+    "cookie-es@3.1.1": {
+      "integrity": "sha512-UaXxwISYJPTr9hwQxMFYZ7kNhSXboMXP+Z3TRX6f1/NyaGPfuNUZOWP1pUEb75B2HjfklIYLVRfWiFZJyC6Npg=="
+    },
     "cosmiconfig@7.1.0": {
       "integrity": "sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==",
       "dependencies": [
@@ -1688,6 +1692,17 @@
     "react-is@16.13.1": {
       "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
     },
+    "react-router@8.3.1_react@19.2.8_react-dom@19.2.8__react@19.2.8": {
+      "integrity": "sha512-TEOpiO2g0TJHEOJeRVv4amUFun9v1npCKszvcquNvzETUtJ8udV86ah5eFoHT7g26bsBvT6EiIhqulR8eDF++A==",
+      "dependencies": [
+        "cookie-es",
+        "react",
+        "react-dom"
+      ],
+      "optionalPeers": [
+        "react-dom"
+      ]
+    },
     "react@19.2.8": {
       "integrity": "sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw=="
     },
@@ -1819,6 +1834,7 @@
         "npm:oxlint@^1.79.0",
         "npm:react-dom@^19.2.8",
         "npm:react-icons@^5.7.0",
+        "npm:react-router@^8.3.1",
         "npm:react@^19.2.8",
         "npm:typescript@~6.0.2",
         "npm:vite@^8.2.2"
