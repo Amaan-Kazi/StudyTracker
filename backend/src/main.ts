@@ -1,6 +1,8 @@
 import deno_json from "../deno.json" with { type: "json" };
 import { Hono } from "@hono/hono";
 
+import db from "@/db/index.ts";
+
 const app = new Hono();
 
 app.get("/api/info", (c) => {

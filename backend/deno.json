@@ -2,12 +2,19 @@
   "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
   "version": "0.1.0",
   "tasks": {
-    "dev": "deno run --watch --allow-net --allow-env --env-file src/main.ts",
-    "prod": "deno run --allow-net --allow-env --env-file src/main.ts"
+    "dev": "deno task migrate; deno task studio & deno run --watch --allow-net --allow-env --env-file src/main.ts",
+    "prod": "deno task migrate; deno run --allow-net --allow-env --env-file src/main.ts",
+    "migrate": "deno x drizzle-kit migrate",
+    "studio": "deno x drizzle-kit studio --host=0.0.0.0"
   },
   "imports": {
     "@/": "./src/",
     "@hono/hono": "jsr:@hono/hono@^4.12.32",
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@1",
+    "@types/pg": "npm:@types/pg@^8.23.1",
+    "better-auth": "npm:better-auth@^1.6.25",
+    "drizzle-kit": "npm:drizzle-kit@^0.31.11",
+    "drizzle-orm": "npm:drizzle-orm@^0.45.4",
+    "pg": "npm:pg@^8.23.1"
   }
 }

@@ -11,4 +11,6 @@ services:
     command: ["dev"]
     volumes:
       - ./backend:/app/backend
+    ports:
+      - "4983:4983"
 

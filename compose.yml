@@ -4,8 +4,6 @@ services:
     build:
       context: .
       dockerfile: frontend/Dockerfile
-    ports:
-      - "5173:5173"
 
   backend:
     build:
@@ -13,4 +11,25 @@ services:
       dockerfile: backend/Dockerfile
     ports:
       - "8000:8000"
+    depends_on:
+      database:
+        condition: service_healthy
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: studytracker
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 1s
+      retries: 20
+      start_period: 1s
+      timeout: 10s
+
+volumes:
+  postgres_data:
 
